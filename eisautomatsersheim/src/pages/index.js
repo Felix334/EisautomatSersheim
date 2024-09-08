@@ -1,115 +1,136 @@
 import Image from "next/image";
-import localFont from "next/font/local";
+import styles from './pageStyle';
+import { useState } from "react";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+const getImage = (name) => {
+  return require(`./pictures/${name}.png`);
+};
+
+/*Alle bilder in "Pictures" hochladen und dann die Passenden namen unten Eintragen*/
+/*=>Siehe Beispiel Pistazie/Kaesekuchen!!*/ 
+
+const price = {priceSmall: "3.20",priceBig: "4.80"}
+const Kaesekuchen = { name: "Käsekuchen", img_name_: 'Kaesekuchen', available: true }
+const BunterKeks = { name: "Bunter-Kleks", img_name_: 'Kaesekuchen',available: true }
+const Cocoloco = { name: "Cocoloco", img_name_: 'Kaesekuchen',available: true }
+const BananaSplit = { name: "Bananen-Split", img_name_: 'Kaesekuchen',available: true }
+const Haselnuss = { name: "Haselnuss", img_name_: 'Kaesekuchen',available: true }
+const Schokolade = { name: "Schokolade", img_name_: 'Kaesekuchen',available: true }
+const Stratcciatella = { name: "Stratcciatella",img_name_: 'Kaesekuchen', available: true }
+const JogurtHimbere = { name: "Jogurt-Himbere",img_name_: 'Kaesekuchen', available: true }
+const JogurtCassis = { name: "Jogurt-Cassis",img_name_: 'Kaesekuchen', available: true }
+const Pistazie = { name: "Pistazie",img_name_: 'Pistazie', available: true }
+const JogurtErdbeere = { name: "Jogurt-Erdbeere",img_name_: 'Kaesekuchen', available: true }
+const SaltetKaramell = { name: "Saltet-Karamell",img_name_: 'Kaesekuchen', available: true }
+const Vanille = { name: "Vanille",img_name_: 'Kaesekuchen', available: true }
+const Jogurt = { name: "Jogurt",img_name_: 'Kaesekuchen', available: true }
+const Kaffe = { name: "Kaffe",img_name_: 'Kaesekuchen', available: true }
+const Kokustraum = { name: "Kokustraum",img_name_: 'Kaesekuchen', available: true }
+const SchokoKeks = { name: "Schoko-Kecks",img_name_: 'Kaesekuchen', available: true }
+const MangoPassionsFruchtSorbet = { name: "Mango-Passionsfrucht-Sorbet",img_name_: 'Kaesekuchen', available: true }
+const ErdbeerSorbet = { name: "Erdbeer-Sorbet",img_name_: 'Kaesekuchen', available: true }
+const ZitronenSorbet = { name: "Zitronen-Sorbet",img_name_: 'Kaesekuchen', available: true }
+const JogurtHolunder = { name: "Jogurt-Holunder",img_name_: 'Kaesekuchen', available: true }
+const SchokoVegan = { name: "Schoko-Vegan",img_name_: 'Kaesekuchen', available: true }
+const HundeEis = { name: "Hunde-Eis",img_name_: 'Kaesekuchen', available: true, special: true }
+/*async function server() {
+  try {
+    const response = await fetch("/api/data");
+    return response;
+  } catch (err) {
+    console.log(err);
+  }
+}*/
+
+let ice_ = [Kaesekuchen, BunterKeks, Cocoloco, BananaSplit, Haselnuss, Schokolade, 
+  Stratcciatella,Jogurt, JogurtHimbere, JogurtCassis, Pistazie, JogurtErdbeere, SaltetKaramell, Vanille,
+  Kaffe, Kokustraum, SchokoKeks, MangoPassionsFruchtSorbet, ErdbeerSorbet, ZitronenSorbet,
+JogurtHolunder, SchokoVegan, HundeEis];
+
+let ice_big = [Haselnuss, JogurtCassis, Vanille, Kaffe, SchokoKeks, ErdbeerSorbet]
+
+
+function EisKlein({ searchQuery }) {
+  const filteredIceCreams = ice_
+    .filter((ice) => ice.name.toLowerCase().includes(searchQuery.toLowerCase()));
+  
+  if (filteredIceCreams.length === 0) {
+    return <div style={styles.notFound}>Nicht gefunden</div>;
+  }
+  
+  return filteredIceCreams.map((ice) => (
+    <div style={styles.icecreamcard}>
+      <Image src={getImage(ice.img_name_)} alt={ice.name} width={300} height={200} />
+      <div style={styles.icecreaminfo}>
+        <h3 style={styles.icecreamname}>{ice.name}</h3>
+        <p style={styles.availability}>Verfügbar: {ice.available ? "Ja" : "Nein"}</p>
+        <p style={styles.size}>Größe: 150ml{ice.size}</p>
+        <p style={styles.priceStyle}>Preis: {price.priceSmall}€</p>
+      </div>
+    </div>
+  ));
+  }
+
+function EisGroß({ searchQuery }) {
+  return ice_big
+    .filter((ice) => ice.name.toLowerCase().includes(searchQuery.toLowerCase()))
+    .map((ice) => (
+      <div style={styles.icecreamcardBig}>
+        <Image src={ice.img} alt={ice.name} width={300} height={200} />
+        <div style={styles.icecreaminfo}>
+          <h3 style={styles.icecreamname}>{ice.name}</h3>
+          
+          <p style={styles.size}>Größe: 480ml</p>
+          <p style={styles.priceStyle}>Preis: {price.priceBig}€</p>
+        </div>
+      </div>
+    ));
+}
 
 export default function Home() {
-  return (
-    <div
-      className={`${geistSans.variable} ${geistMono.variable} grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]`}
-    >
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/pages/index.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const [searchQuerry, setSearchQuerry] = useState("");
+  const [showLogin, setShowLogin] = useState(false);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  const handleSearch = (e) => {
+    setSearchQuerry(e.target.value);
+    console.log("Toggle login clicked!");
+  };
+  const handleToggleLogin = () => {
+    setShowLogin(!showLogin);
+  };
+
+  return (
+    // Name duch Bild ersetzen
+    <main className="flex flex-col items-center justify-between p-4">
+      <div style={styles.headerwrapper}>
+        <div style={styles.header}>
+          <h1 className="flex center-text text-align: center flex-col text-4xl md:text-4xl font-bold text-gray-900"> Eisautomat Sersheim</h1>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </div>
+      <div style={styles.searchBar}>
+        <input className="Search" type="search" style={styles.InputSearchStyle} value={searchQuerry} onChange={handleSearch} placeholder="Suchen"></input>
+      </div>
+      <div style={styles.body}>
+        <div style={styles.icecreamgrid}>
+          <EisKlein searchQuery={searchQuerry} />
+          <EisGroß searchQuery={searchQuerry}/>
+        </div>
+        {showLogin && <Login handleClose={handleToggleLogin} />}
+      </div>
+      <div className="fotter">
+        <div style={styles.FooterBox}>
+          <div className="Adresse">
+            <h4 className="text-2xl font-bold text-gray-900">Adresse:</h4>
+            <h2>Vaihinger Straße 82</h2>
+            <h2>74372 Sersheim</h2>
+            <div className="GoogleMapsWrapper">
+              <a className="Link" href="https://www.google.com/maps/place/Vaihinger+Stra%C3%9Fe+82,+74372+Sersheim">
+                <h2 style={styles.AdresseLink}>Adresse in Google Maps öffnen</h2>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
   );
 }
