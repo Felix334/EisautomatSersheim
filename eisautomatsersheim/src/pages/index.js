@@ -5,6 +5,7 @@ import { useState } from "react";
 const getImage = (name) => {
   return require(`./pictures/${name}.png`);
 };
+//Test
 
 /*Alle bilder in "Pictures" hochladen und dann die Passenden namen unten Eintragen*/
 /*=>Siehe Beispiel Pistazie/Kaesekuchen!!*/ 
@@ -76,7 +77,7 @@ function EisGroß({ searchQuery }) {
     .filter((ice) => ice.name.toLowerCase().includes(searchQuery.toLowerCase()))
     .map((ice) => (
       <div style={styles.icecreamcardBig}>
-        <Image src={ice.img} alt={ice.name} width={300} height={200} />
+        <Image src={getImage(ice.img_name_)} alt={ice.name} width={300} height={200} />
         <div style={styles.icecreaminfo}>
           <h3 style={styles.icecreamname}>{ice.name}</h3>
           
