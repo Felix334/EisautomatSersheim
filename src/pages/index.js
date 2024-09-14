@@ -12,7 +12,7 @@ const getImage = (name) => {
 
 const price = {priceSmall: "3.20",priceBig: "4.80"}
 const Kaesekuchen = { name: "Käsekuchen", img_name_: 'Kaesekuchen', available: true }
-const BunterKeks = { name: "Bunter-Kleks", img_name_: 'Kaesekuchen',available: true }
+const BunterKleks = { name: "Bunter-Kleks", img_name_: 'Kaesekuchen',available: true }
 const Cocoloco = { name: "Cocoloco", img_name_: 'Kaesekuchen',available: true }
 const BananaSplit = { name: "Bananen-Split", img_name_: 'Kaesekuchen',available: true }
 const Haselnuss = { name: "Haselnuss", img_name_: 'Kaesekuchen',available: true }
@@ -25,7 +25,7 @@ const JogurtErdbeere = { name: "Jogurt-Erdbeere",img_name_: 'Kaesekuchen', avail
 const SaltetKaramell = { name: "Saltet-Karamell",img_name_: 'Kaesekuchen', available: true }
 const Vanille = { name: "Vanille",img_name_: 'Kaesekuchen', available: true }
 const Jogurt = { name: "Jogurt",img_name_: 'Kaesekuchen', available: true }
-const Kaffe = { name: "Kaffe",img_name_: 'Kaesekuchen', available: true }
+const Kaffe = { name: "Kaffe",img_name_: 'Kaffe', available: true }
 const Kokustraum = { name: "Kokustraum",img_name_: 'Kaesekuchen', available: true }
 const SchokoKeks = { name: "Schoko-Kecks",img_name_: 'Kaesekuchen', available: true }
 const MangoPassionsFruchtSorbet = { name: "Mango-Passionsfrucht-Sorbet",img_name_: 'Kaesekuchen', available: true }
@@ -43,7 +43,7 @@ const HundeEis = { name: "Hunde-Eis",img_name_: 'Kaesekuchen', available: true, 
   }
 }*/
 
-let ice_ = [Kaesekuchen, BunterKeks, Cocoloco, BananaSplit, Haselnuss, Schokolade, 
+let ice_ = [Kaesekuchen, BunterKleks, Cocoloco, BananaSplit, Haselnuss, Schokolade, 
   Stratcciatella,Jogurt, JogurtHimbere, JogurtCassis, Pistazie, JogurtErdbeere, SaltetKaramell, Vanille,
   Kaffe, Kokustraum, SchokoKeks, MangoPassionsFruchtSorbet, ErdbeerSorbet, ZitronenSorbet,
 JogurtHolunder, SchokoVegan, HundeEis];
