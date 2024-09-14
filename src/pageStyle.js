@@ -51,7 +51,6 @@ const styles = {
       textAlign: "center",
       aspectRatio: "aspect-auto",
     },
-  
     availability: {
       color: "#666",
       fontSize: "18px",
