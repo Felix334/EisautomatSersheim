@@ -1,11 +1,11 @@
 import Image from "next/image";
-import styles from './pageStyle';
+import styles from '../pageStyle';
 import { useState } from "react";
 
 const getImage = (name) => {
   return require(`./pictures/${name}.png`);
 };
-//Test
+// Das hier ist das richtige Projekt
 
 /*Alle bilder in "Pictures" hochladen und dann die Passenden namen unten Eintragen*/
 /*=>Siehe Beispiel Pistazie/Kaesekuchen!!*/ 

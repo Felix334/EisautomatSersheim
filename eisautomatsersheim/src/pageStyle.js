@@ -1,3 +1,6 @@
+import Image from "next/image";
+import react from "react";
+
 const styles = {
     priceStyle: {
       color: "#666",
