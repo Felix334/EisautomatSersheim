@@ -12,7 +12,7 @@ const getImage = (name) => {
 
 const price = {priceSmall: "3.20",priceBig: "4.80"}
 const Kaesekuchen = { name: "Käsekuchen", img_name_: 'KaesekuchenK', img_name_groß: 'KaesekuchenG',available: true }
-const BunterKleks = { name: "Bunter-Kleks", img_name_: 'Kaesekuchen',available: true }
+const BunterKleks = { name: "Bunter-Klecks", img_name_: 'Kaesekuchen',available: true }
 const Cocoloco = { name: "Cocoloco", img_name_: 'Kaesekuchen',available: true }
 const BananaSplit = { name: "Bananen-Split", img_name_: 'Kaesekuchen',available: true }
 const Haselnuss = { name: "Haselnuss", img_name_: 'HaselnussK',available: true }
