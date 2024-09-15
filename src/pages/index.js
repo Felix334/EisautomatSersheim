@@ -1,6 +1,7 @@
 import Image from "next/image";
 import styles from '../pageStyle';
 import { useState } from "react";
+import Head from 'next/head';
 
 // Wenn alles fertig ist => https://vercel.com/felix334s-projects/eisautomat-sersheim/deployments
 // => Aktuellen Branch Promoten
@@ -99,7 +100,9 @@ export default function Home() {
   return (
     // Name duch Bild ersetzen
     <main className="flex flex-col items-center justify-between p-4">
+      <Head>
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4153577229204032"crossorigin="anonymous"></script>
+      </Head>
       <div style={styles.headerwrapper}>
         <div style={styles.header}>
           <h1 className="flex center-text text-align: center flex-col text-4xl md:text-4xl font-bold text-gray-900"> Eisautomat Sersheim</h1>
