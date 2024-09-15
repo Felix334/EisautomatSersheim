@@ -2,47 +2,48 @@ import Image from "next/image";
 import styles from '../pageStyle';
 import { useState } from "react";
 
-const getImage = (name) => {
-  return require(`./pictures/${name}.jpg`);
+const getImageKlein = (img_name_) => {
+  if (!img_name_ || img_name_ === '') {
+    return require('./pictures/DefaultImage.jpg'); // fallback to a default image
+  }
+  return require(`./pictures/${img_name_}.jpg`);
 };
 
+const getImageGroß = (img_name_groß) => {
+  if (!img_name_groß || img_name_groß === '') {
+    return require('./pictures/DefaultImage.jpg'); // fallback to a default image
+  }
+  return require(`./pictures/${img_name_groß}.jpg`);
+};
 // Das hier ist das richtige Projekt
 
 /*Alle bilder in "Pictures" hochladen und dann die Passenden namen unten Eintragen*/
 /*=>Siehe Beispiel Pistazie/Kaesekuchen!!*/ 
 
 const price = {priceSmall: "3.20",priceBig: "4.80"}
-const Kaesekuchen = { name: "Käsekuchen", img_name_: 'KaesekuchenKlein', available: true }
-const BunterKleks = { name: "Buntes-Klecks", img_name_: 'Buntes-KlecksKlein',available: true }
-const Cocoloco = { name: "Cocoloco", img_name_: 'image',available: true }
-const BananaSplit = { name: "Bananen-Split", img_name_: 'BananenSplitKlein',available: true }
-const Haselnuss = { name: "Haselnuss", img_name_: 'HaselnussKlein',available: true }
-const Schokolade = { name: "Schokolade", img_name_: 'SchokoKlein',available: true }
-const Stratcciatella = { name: "Stratcciatella",img_name_: 'StracciatellaKlein', available: true }
-const JogurtHimbere = { name: "Jogurt-Himbere",img_name_: 'image', available: true }
-const JogurtCassis = { name: "Jogurt-Cassis",img_name_: 'JogurtCassisKlein', available: true }
-const Pistazie = { name: "Pistazie",img_name_: 'PistazieKlein', available: true }
-const JogurtErdbeere = { name: "Jogurt-Erdbeere",img_name_: 'image', available: true }
-const SaltetKaramell = { name: "Saltet-Karamell",img_name_: 'SaltetKaramellKlein', available: true }
-const Vanille = { name: "Vanille",img_name_: 'VanilleKlein', available: true }
-const Jogurt = { name: "Jogurt",img_name_: 'JogurtKlein', available: true }
-const Kaffe = { name: "Kaffe",img_name_: 'KaffeKlein', available: true }
-const Kokustraum = { name: "Kokustraum",img_name_: 'KokustraumKlein', available: true }
-const SchokoKeks = { name: "Schoko-Kecks",img_name_: 'SchokoKeksKlein', img_name_groß: 'SchokoKeksG',available: true }
-const MangoPassionsFruchtSorbet = { name: "Mango-Passionsfrucht-Sorbet",img_name_: 'MangoPassionsfruchtSorbetKlein', available: true }
-const ErdbeerSorbet = { name: "Erdbeer-Sorbet",img_name_: 'ErdbeerSorbetKlein', available: true }
-const ZitronenSorbet = { name: "Zitronen-Sorbet",img_name_: 'image', available: true }
-const JogurtHolunder = { name: "Jogurt-Holunder",img_name_: 'image', available: true }
-const SchokoVegan = { name: "Schoko-Vegan",img_name_: 'SchokoVeganKlein', available: true }
-const HundeEis = { name: "Hunde-Eis",img_name_: 'HundeEis', available: true, special: true }
-/*async function server() {
-  try {
-    const response = await fetch("/api/data");
-    return response;
-  } catch (err) {
-    console.log(err);
-  }
-}*/
+const Kaesekuchen = { name: 'Käsekuchen', img_name_: 'KaesekuchenKlein', available: true };
+const BunterKleks = { name: 'BuntesKlecks', img_name_: 'BuntesKlecksKlein', available: true };
+const Cocoloco = { name: 'Cocoloco', img_name_: 'DefaultImage', available: true };
+const BananaSplit = { name: 'BananenSplit', img_name_: 'BananenSplitKlein', available: true };
+const Haselnuss = { name: 'Haselnuss', img_name_: 'HaselnussKlein', img_name_groß: 'HaselnussKlein', available: true };
+const Schokolade = { name: 'Schokolade', img_name_: 'SchokoKlein', available: true };
+const Stratcciatella = { name: 'Stratcciatella', img_name_: 'StracciatellaKlein', available: true };
+const JogurtHimbere = { name: 'Jogurt-Himbere', img_name_: 'DefaultImage', available: true };
+const JogurtCassis = { name: 'Jogurt-Cassis', img_name_: 'JogurtCassisKlein', available: true };
+const Pistazie = { name: 'Pistazie', img_name_: 'PistazieKlein', available: true };
+const JogurtErdbeere = { name: 'Jogurt-Erdbeere', img_name_: 'DefaultImage', available: true };
+const SaltetKaramell = { name: 'Saltet-Karamell', img_name_: 'SaltetKaramellKlein', available: true };
+const Vanille = { name: 'Vanille', img_name_: 'VanilleKlein', available: true };
+const Jogurt = { name: 'Jogurt', img_name_: 'JogurtKlein', available: true };
+const Kaffe = { name: 'Kaffe', img_name_: 'KaffeKlein', available: true };
+const Kokustraum = { name: 'Kokustraum', img_name_: 'KokustraumKlein', available: true };
+const SchokoKeks = { name: 'Schoko-Kecks', img_name_: 'SchokoKeksKlein', img_name_groß: 'SchokoKeksGroß', available: true };
+const MangoPassionsFruchtSorbet = { name: 'Mango-PassionsfruchtSorbet', img_name_: 'MangoPassionsfruchtSorbetKlein', available: true };
+const ErdbeerSorbet = { name: 'Erdbeer-Sorbet', img_name_: 'DefaultImage', available: true };
+const ZitronenSorbet = { name: 'Zitronen-Sorbet', img_name_: 'DefaultImage', available: true };
+const JogurtHolunder = { name: 'Jogurt-Holunder', img_name_: 'DefaultImage', available: true };
+const SchokoVegan = { name: 'Schoko-Vegan', img_name_: 'SchokoVeganKlein', available: true };
+const HundeEis = { name: 'Hunde-Eis', img_name_: 'HundeEis', available: true, special: true };
 
 let ice_ = [Kaesekuchen, BunterKleks, Cocoloco, BananaSplit, Haselnuss, Schokolade, 
   Stratcciatella,Jogurt, JogurtHimbere, JogurtCassis, Pistazie, JogurtErdbeere, SaltetKaramell, Vanille,
@@ -62,7 +63,7 @@ function EisKlein({ searchQuery }) {
   
   return filteredIceCreams.map((ice) => (
     <div style={styles.icecreamcard}>
-      <Image src={getImage(ice.img_name_)} alt={ice.name} width={300} height={200} />
+      <Image src={getImageKlein(ice.img_name_)} alt={ice.name} width={300} height={200} />
       <div style={styles.icecreaminfo}>
         <h3 style={styles.icecreamname}>{ice.name}</h3>
         <p style={styles.availability}>Verfügbar: {ice.available ? "Ja" : "Nein"}</p>
@@ -78,7 +79,7 @@ function EisGroß({ searchQuery }) {
     .filter((ice) => ice.name.toLowerCase().includes(searchQuery.toLowerCase()))
     .map((ice) => (
       <div style={styles.icecreamcardBig}>
-        <Image src={getImage(ice.img_name_groß)} alt={ice.name} width={300} height={200} />
+        <Image src={getImageGroß(ice.img_name_groß)} alt={ice.name} width={300} height={200} />
         <div style={styles.icecreaminfo}>
           <h3 style={styles.icecreamname}>{ice.name}</h3>
           
