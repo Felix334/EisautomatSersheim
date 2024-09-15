@@ -26,15 +26,15 @@ const JogurtErdbeere = { name: "Jogurt-Erdbeere",img_name_: 'image', available: 
 const SaltetKaramell = { name: "Saltet-Karamell",img_name_: 'SaltetKaramellKlein', available: true }
 const Vanille = { name: "Vanille",img_name_: 'VanilleKlein', available: true }
 const Jogurt = { name: "Jogurt",img_name_: 'JogurtKlein', available: true }
-const Kaffe = { name: "Kaffe",img_name_: 'KaffeK', available: true }
-const Kokustraum = { name: "Kokustraum",img_name_: 'image', available: true }
-const SchokoKeks = { name: "Schoko-Kecks",img_name_: 'Schoko-KeksK', img_name_groß: 'SchokoKeksG',available: true }
-const MangoPassionsFruchtSorbet = { name: "Mango-Passionsfrucht-Sorbet",img_name_: 'image', available: true }
-const ErdbeerSorbet = { name: "Erdbeer-Sorbet",img_name_: 'ErdbeerSorbetK', available: true }
+const Kaffe = { name: "Kaffe",img_name_: 'KaffeKlein', available: true }
+const Kokustraum = { name: "Kokustraum",img_name_: 'KokustraumKlein', available: true }
+const SchokoKeks = { name: "Schoko-Kecks",img_name_: 'SchokoKeksKlein', img_name_groß: 'SchokoKeksG',available: true }
+const MangoPassionsFruchtSorbet = { name: "Mango-Passionsfrucht-Sorbet",img_name_: 'MangoPassionsfruchtSorbetKlein', available: true }
+const ErdbeerSorbet = { name: "Erdbeer-Sorbet",img_name_: 'ErdbeerSorbetKlein', available: true }
 const ZitronenSorbet = { name: "Zitronen-Sorbet",img_name_: 'image', available: true }
 const JogurtHolunder = { name: "Jogurt-Holunder",img_name_: 'image', available: true }
-const SchokoVegan = { name: "Schoko-Vegan",img_name_: 'Schoko-VeganK', available: true }
-const HundeEis = { name: "Hunde-Eis",img_name_: 'Hunde-Eis', available: true, special: true }
+const SchokoVegan = { name: "Schoko-Vegan",img_name_: 'SchokoVeganKlein', available: true }
+const HundeEis = { name: "Hunde-Eis",img_name_: 'HundeEis', available: true, special: true }
 /*async function server() {
   try {
     const response = await fetch("/api/data");
