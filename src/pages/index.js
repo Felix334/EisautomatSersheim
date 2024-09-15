@@ -3,7 +3,7 @@ import styles from '../pageStyle';
 import { useState } from "react";
 
 const getImage = (name) => {
-  return require(`./pictures/${name}.png`);
+  return require(`./pictures/${name}.jpg`);
 };
 // Das hier ist das richtige Projekt
 
@@ -11,29 +11,29 @@ const getImage = (name) => {
 /*=>Siehe Beispiel Pistazie/Kaesekuchen!!*/ 
 
 const price = {priceSmall: "3.20",priceBig: "4.80"}
-const Kaesekuchen = { name: "Käsekuchen", img_name_: 'Kaesekuchen', available: true }
+const Kaesekuchen = { name: "Käsekuchen", img_name_: 'KaesekuchenK', img_name_groß: 'KaesekuchenG',available: true }
 const BunterKleks = { name: "Bunter-Kleks", img_name_: 'Kaesekuchen',available: true }
 const Cocoloco = { name: "Cocoloco", img_name_: 'Kaesekuchen',available: true }
 const BananaSplit = { name: "Bananen-Split", img_name_: 'Kaesekuchen',available: true }
-const Haselnuss = { name: "Haselnuss", img_name_: 'Kaesekuchen',available: true }
-const Schokolade = { name: "Schokolade", img_name_: 'Kaesekuchen',available: true }
-const Stratcciatella = { name: "Stratcciatella",img_name_: 'Kaesekuchen', available: true }
+const Haselnuss = { name: "Haselnuss", img_name_: 'HaselnussK',available: true }
+const Schokolade = { name: "Schokolade", img_name_: 'Schokolade',available: true }
+const Stratcciatella = { name: "Stratcciatella",img_name_: 'StracciatellaK', available: true }
 const JogurtHimbere = { name: "Jogurt-Himbere",img_name_: 'Kaesekuchen', available: true }
-const JogurtCassis = { name: "Jogurt-Cassis",img_name_: 'Kaesekuchen', available: true }
-const Pistazie = { name: "Pistazie",img_name_: 'Pistazie', available: true }
+const JogurtCassis = { name: "Jogurt-Cassis",img_name_: 'Jogurt-CassisK', available: true }
+const Pistazie = { name: "Pistazie",img_name_: 'PistazieK', available: true }
 const JogurtErdbeere = { name: "Jogurt-Erdbeere",img_name_: 'Kaesekuchen', available: true }
-const SaltetKaramell = { name: "Saltet-Karamell",img_name_: 'Kaesekuchen', available: true }
-const Vanille = { name: "Vanille",img_name_: 'Kaesekuchen', available: true }
-const Jogurt = { name: "Jogurt",img_name_: 'Kaesekuchen', available: true }
-const Kaffe = { name: "Kaffe",img_name_: 'Kaffe', available: true }
+const SaltetKaramell = { name: "Saltet-Karamell",img_name_: 'Saltet-KaramellK', available: true }
+const Vanille = { name: "Vanille",img_name_: 'VanilleK', available: true }
+const Jogurt = { name: "Jogurt",img_name_: 'JogurtK', available: true }
+const Kaffe = { name: "Kaffe",img_name_: 'KaffeK', available: true }
 const Kokustraum = { name: "Kokustraum",img_name_: 'Kaesekuchen', available: true }
-const SchokoKeks = { name: "Schoko-Kecks",img_name_: 'Kaesekuchen', available: true }
+const SchokoKeks = { name: "Schoko-Kecks",img_name_: 'Schoko-KeksK', img_name_groß: 'SchokoKeksG',available: true }
 const MangoPassionsFruchtSorbet = { name: "Mango-Passionsfrucht-Sorbet",img_name_: 'Kaesekuchen', available: true }
-const ErdbeerSorbet = { name: "Erdbeer-Sorbet",img_name_: 'Kaesekuchen', available: true }
+const ErdbeerSorbet = { name: "Erdbeer-Sorbet",img_name_: 'ErdbeerSorbetK', available: true }
 const ZitronenSorbet = { name: "Zitronen-Sorbet",img_name_: 'Kaesekuchen', available: true }
 const JogurtHolunder = { name: "Jogurt-Holunder",img_name_: 'Kaesekuchen', available: true }
-const SchokoVegan = { name: "Schoko-Vegan",img_name_: 'Kaesekuchen', available: true }
-const HundeEis = { name: "Hunde-Eis",img_name_: 'Kaesekuchen', available: true, special: true }
+const SchokoVegan = { name: "Schoko-Vegan",img_name_: 'Schoko-VeganK', available: true }
+const HundeEis = { name: "Hunde-Eis",img_name_: 'Hunde-Eis', available: true, special: true }
 /*async function server() {
   try {
     const response = await fetch("/api/data");
@@ -77,7 +77,7 @@ function EisGroß({ searchQuery }) {
     .filter((ice) => ice.name.toLowerCase().includes(searchQuery.toLowerCase()))
     .map((ice) => (
       <div style={styles.icecreamcardBig}>
-        <Image src={getImage(ice.img_name_)} alt={ice.name} width={300} height={200} />
+        <Image src={getImage(ice.img_name_groß)} alt={ice.name} width={300} height={200} />
         <div style={styles.icecreaminfo}>
           <h3 style={styles.icecreamname}>{ice.name}</h3>
           
