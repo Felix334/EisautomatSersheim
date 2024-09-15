@@ -15,10 +15,6 @@ const getImageGroß = (img_name_groß) => {
   }
   return require(`./pictures/${img_name_groß}.jpg`);
 };
-// Das hier ist das richtige Projekt
-
-/*Alle bilder in "Pictures" hochladen und dann die Passenden namen unten Eintragen*/
-/*=>Siehe Beispiel Pistazie/Kaesekuchen!!*/ 
 
 const price = {priceSmall: "3.20",priceBig: "4.80"}
 const Kaesekuchen = { name: 'Käsekuchen', img_name_: 'KaesekuchenKlein', available: true };
