@@ -101,7 +101,19 @@ export default function Home() {
     // Name duch Bild ersetzen
     <main className="flex flex-col items-center justify-between p-4">
       <Head>
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4153577229204032"crossorigin="anonymous"></script>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4153577229204032" crossorigin="anonymous"></script>
+        <script>
+          {(function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+            var f = d.getElementsByTagName(s)[0],
+              j = d.createElement(s),
+              dl = l != "dataLayer" ? "&l=" + l : "";
+            j.async = true;
+            j.src = "https://www.example.com/new-script.js?id=" + i + dl;
+            f.parentNode.insertBefore(j, f);
+          })(window, document, "script", "dataLayer", "NEW-ID-HERE")}
+        </script>
       </Head>
       <div style={styles.headerwrapper}>
         <div style={styles.header}>
@@ -114,7 +126,7 @@ export default function Home() {
       <div style={styles.body}>
         <div style={styles.icecreamgrid}>
           <EisKlein searchQuery={searchQuerry} />
-          <EisGroß searchQuery={searchQuerry}/>
+          <EisGroß searchQuery={searchQuerry} />
         </div>
       </div>
       <div className="fotter">
