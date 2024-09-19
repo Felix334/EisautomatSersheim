@@ -2,7 +2,8 @@ import Image from "next/image";
 import styles from '../pageStyle';
 import { useState } from "react";
 import Head from 'next/head';
-import Script from 'next/script'
+import Script from 'next/script';
+//import Analytics from '@vercel/analytics';
 
 // Wenn alles fertig ist => https://vercel.com/felix334s-projects/eisautomat-sersheim/deployments
 // => Aktuellen Branch Promoten
@@ -76,12 +77,14 @@ function CookieConsentBanner() {
       <h2>1. Einführung</h2>
       <p>Diese Nutzungsbedingungen enthalten die Regeln und Richtlinien für die Verwendung unserer Website.</p>
       <h2>2. Annahme der Bedingungen</h2>
+      <h2>Durch die Nutzung unsere Plattform stimmen sie der Verwendung von Werbung zu.</h2>
+      <h2>Wir werden aber sicherstellen, dass diese Werbung nicht störend oder anstößig ist.</h2>
       <p>Indem Sie unsere Website nutzen, akzeptieren Sie diese Nutzungsbedingungen.</p>
       <h2>3. Geistiges Eigentum</h2>
       <p>Unsere Website und ihr Inhalt sind durch das geistige Eigentum geschützt.</p>
       <h2>4. Haftungsbeschränkung</h2>
       <p>Wir haften nicht für Schäden oder Verluste, die durch die Verwendung unserer Website entstehen.</p>
-      <h2>5. Anwendbares Recht</h2>
+      <h2>5. Anwendbares Recht:</h2>
       <p>Diese Nutzungsbedingungen unterliegen dem deutschen Recht.</p>
       <p>Gewerbe:</p>
       <button onClick={handleAcceptCookies} style={styles.acceptButton}>Cookies Akzeptieren</button>
