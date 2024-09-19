@@ -2,6 +2,7 @@ import Image from "next/image";
 import styles from '../pageStyle';
 import { useState } from "react";
 import Head from 'next/head';
+import Script from 'next/script'
 
 // Wenn alles fertig ist => https://vercel.com/felix334s-projects/eisautomat-sersheim/deployments
 // => Aktuellen Branch Promoten
@@ -38,7 +39,7 @@ const Jogurt = { name: 'Jogurt', img_name_: 'JogurtKlein', available: true };
 const Kaffe = { name: 'Kaffe', img_name_: 'KaffeKlein', available: true };
 const Kokustraum = { name: 'Kokustraum', img_name_: 'KokustraumKlein', available: true };
 const SchokoKeks = { name: 'Schoko-Kecks', img_name_: 'SchokoKeksKlein', img_name_groß: 'SchokoKeksGroß', available: true };
-const MangoPassionsFruchtSorbet = { name: 'Mango-PassionsfruchtSorbet', img_name_: 'MangoPassionsfruchtSorbetKlein', available: true };
+const MangoPassionsFruchtSorbet = { name: 'Mango-Passionsfrucht-Sorbet', img_name_: 'MangoPassionsfruchtSorbetKlein', available: true };
 const ErdbeerSorbet = { name: 'Erdbeer-Sorbet', img_name_: 'DefaultImage', available: true };
 const ZitronenSorbet = { name: 'Zitronen-Sorbet', img_name_: 'DefaultImage', available: true };
 const JogurtHolunder = { name: 'Jogurt-Holunder', img_name_: 'DefaultImage', available: true };
@@ -52,7 +53,46 @@ JogurtHolunder, SchokoVegan, HundeEis];
 
 let ice_big = [Haselnuss, JogurtCassis, Vanille, Kaffe, SchokoKeks, ErdbeerSorbet]
 
+function CookieConsentBanner() {
+  const [consentGiven, setConsentGiven] = useState(false);
+  const [showBanner, setShowBanner] = useState(true);
 
+  const handleAcceptCookies = () => {
+    setConsentGiven(true);
+    setShowBanner(false);
+  };
+
+  const handleDeclineCookies = () => {
+    setConsentGiven(false);
+    setShowBanner(false);
+  };
+
+  return (
+    <div>
+    {showBanner && (
+    <div id={"CookieBanner"} style={styles.cookieConsentBanner}>
+      <title>Terms and Conditions</title>
+      <h1>Nutzungsbedingungen</h1>
+      <h2>1. Einführung</h2>
+      <p>Diese Nutzungsbedingungen enthalten die Regeln und Richtlinien für die Verwendung unserer Website.</p>
+      <h2>2. Annahme der Bedingungen</h2>
+      <p>Indem Sie unsere Website nutzen, akzeptieren Sie diese Nutzungsbedingungen.</p>
+      <h2>3. Geistiges Eigentum</h2>
+      <p>Unsere Website und ihr Inhalt sind durch das geistige Eigentum geschützt.</p>
+      <h2>4. Haftungsbeschränkung</h2>
+      <p>Wir haften nicht für Schäden oder Verluste, die durch die Verwendung unserer Website entstehen.</p>
+      <h2>5. Anwendbares Recht</h2>
+      <p>Diese Nutzungsbedingungen unterliegen dem deutschen Recht.</p>
+      <p>Gewerbe:</p>
+      <button onClick={handleAcceptCookies} style={styles.acceptButton}>Cookies Akzeptieren</button>
+      <button onClick={handleDeclineCookies} style={styles.delicneButton}>Cookies ablehnen</button>
+      </div>
+)}
+</div>
+  );
+
+
+}
 function EisKlein({ searchQuery }) {
   const filteredIceCreams = ice_
     .filter((ice) => ice.name.toLowerCase().includes(searchQuery.toLowerCase()));
@@ -90,6 +130,8 @@ function EisGroß({ searchQuery }) {
     ));
 }
 
+
+
 export default function Home() {
   const [searchQuerry, setSearchQuerry] = useState("");
 
@@ -101,21 +143,13 @@ export default function Home() {
     // Name duch Bild ersetzen
     <main className="flex flex-col items-center justify-between p-4">
       <Head>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4153577229204032" crossorigin="anonymous"></script>
-        <script>
-          {(function (w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-            var f = d.getElementsByTagName(s)[0],
-              j = d.createElement(s),
-              dl = l != "dataLayer" ? "&l=" + l : "";
-            j.async = true;
-            j.src = "https://www.example.com/new-script.js?id=" + i + dl;
-            f.parentNode.insertBefore(j, f);
-          })(window, document, "script", "dataLayer", "NEW-ID-HERE")}
-        </script>
       </Head>
+      <CookieConsentBanner />
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4153577229204032"
+     crossorigin="anonymous"></script>
       <div style={styles.headerwrapper}>
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/nonpersonalized-adsbygoogle.js"
+    crossOrigin="anonymous"></script>
         <div style={styles.header}>
           <h1 className="flex center-text text-align: center flex-col text-4xl md:text-4xl font-bold text-gray-900"> Eisautomat Sersheim</h1>
         </div>

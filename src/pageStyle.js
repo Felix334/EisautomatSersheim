@@ -1,7 +1,7 @@
 import Image from "next/image";
 import react from "react";
 
-const styles = {
+let styles = {
     priceStyle: {
       color: "#666",
       fontSize: "18px",
@@ -231,6 +231,31 @@ const styles = {
         backgroundColor: "#3e8e41",
       },
     },
+    cookieConsentBanner: {
+      display: 'block',
+      position: 'fixed',
+      bottom: '30%',
+      left: '35%',
+      height: 'auto',
+      width: '30vw',
+      backgroundColor: 'rgba(255, 255, 255, 0.9)',
+      padding: '10px',
+      boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)',
+      zIndex: 1,
+      textAlign: 'center',
+    },
+    acceptButton: {
+        position: 'relative',
+        backgroundColor: 'green',
+        alignSelf: 'center'
+    },
+    delicneButton:{
+        position: 'relative',
+        borderRadius: '5%', 
+        left: '5%',
+        backgroundColor: 'red',
+        alignSelf: 'center'
+    }
   };
   
   export default styles;
