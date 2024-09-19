@@ -137,7 +137,6 @@ export default function Home() {
 
   const handleSearch = (e) => {
     setSearchQuerry(e.target.value);
-    console.log("Toggle login clicked!");
   };
   return (
     // Name duch Bild ersetzen
