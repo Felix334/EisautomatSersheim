@@ -3,6 +3,7 @@ import styles from '../pageStyle';
 import { useState } from "react";
 import Head from 'next/head';
 import Script from 'next/script';
+import { setCookie, getCookie, removeCookie } from 'next-cookie';
 //import Analytics from '@vercel/analytics';
 
 // Wenn alles fertig ist => https://vercel.com/felix334s-projects/eisautomat-sersheim/deployments
@@ -58,12 +59,19 @@ function CookieConsentBanner() {
   const [consentGiven, setConsentGiven] = useState(false);
   const [showBanner, setShowBanner] = useState(true);
 
+  async function checkCookie() {
+    const cookie = await getCookie('AGBs');
+    setConsentGiven(!!cookie);
+  }
+
   const handleAcceptCookies = () => {
+    setCookie('AGBs', 'true', { maxAge: 30 * 24 * 60 * 60 }); // expires in 30 days
     setConsentGiven(true);
     setShowBanner(false);
   };
 
   const handleDeclineCookies = () => {
+    removeCookie('AGBs');
     setConsentGiven(false);
     setShowBanner(false);
   };
