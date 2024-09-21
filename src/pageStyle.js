@@ -234,28 +234,51 @@ let styles = {
     cookieConsentBanner: {
       display: 'block',
       position: 'fixed',
-      bottom: '30%',
-      left: '35%',
+      top: '10%',
+      left: '25%',
       height: 'auto',
-      width: '30vw',
+      width: '50vw',
       backgroundColor: 'rgba(255, 255, 255, 0.9)',
       padding: '10px',
       boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)',
       zIndex: 1,
+      overflowY: 'auto',
+      maxHeight: '80vh',
       textAlign: 'center',
     },
-    acceptButton: {
-        position: 'relative',
-        backgroundColor: 'green',
-        alignSelf: 'center'
+    button: { 
+      display: 'inline-block',
+      margin: '10px',
+      border: '2px solid #ccc', /* set the border style, width, and color */
+      borderRadius: '10px', /* add a rounded corner */
+      padding: '10px 20px', /* add some padding to the button */
+      backgroundColor: 'yellow', /* set the background color */
+      color: 'blue', /* set the text color */
+      cursor: 'pointer', /* change the cursor to a pointer on hover */
+  },
+  '@media (max-width: 480px)': { /* adjust the width value to your needs */
+    '& button': {
+      display: 'block', /* make buttons block-level if screen width is too small */
+      width: '100%', /* make buttons full-width */
+      margin: '10px 0', /* adjust margin to account for full-width buttons */
+      color: 'blue'
     },
-    delicneButton:{
-        position: 'relative',
-        borderRadius: '5%', 
-        left: '5%',
-        backgroundColor: 'red',
-        alignSelf: 'center'
-    }
-  };
-  
+  },
+  acceptButton: {
+    backgroundColor: '#4CAF50', // green color
+    color: '#FFFFFF', // white text color
+    border: 'none',
+    padding: '10px 20px',
+    fontSize: '16px',
+    cursor: 'pointer',
+  },
+  declineButton: {
+    backgroundColor: 'red', // orange color
+    color: '#FFFFFF', // white text color
+    border: 'none',
+    padding: '10px 20px',
+    fontSize: '16px',
+    cursor: 'pointer',
+  },
+}
   export default styles;
