@@ -191,7 +191,7 @@ let ice_big = [
   JogurtErdbeere,
 ];
 
-// Test
+// 20:39 22.9.204
 function EisKlein({ searchQuery }) {
   const filteredIceCreams = ice_.filter((ice) =>
     ice.name.toLowerCase().includes(searchQuery.toLowerCase())
