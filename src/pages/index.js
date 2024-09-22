@@ -76,7 +76,7 @@ const JogurtCassis = {
 };
 const Pistazie = {
   name: "Pistazie",
-  img_name_: "Pistazie",
+  img_name_: "PistazieK",
   image_name_G: "PistazieG",
   available: true,
 };
