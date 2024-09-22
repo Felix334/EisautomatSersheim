@@ -288,8 +288,7 @@ export default function Home() {
             <div className="GoogleMapsWrapper">
               <a
                 className="Link"
-                href="https://www.google.com/maps/place/Vaihinger+Stra%C3%9Fe+82,+74372+Sersheim"
-              >
+                href="https://www.google.com/maps/place/Vaihinger+Stra%C3%9Fe+82,+74372+Sersheim">
                 <h2 style={styles.AdresseLink}>
                   Adresse in Google Maps öffnen
                 </h2>
