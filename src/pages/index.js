@@ -16,7 +16,7 @@ const getImageGroß = (image_name_G) => {
     return require(`./pictures/DefaultImage.jpg`);
   }
 };
-//Test Git pull??
+
 //Test
 
 /*Alle bilder in "Pictures" hochladen und dann die Passenden namen unten Eintragen*/
