@@ -17,7 +17,7 @@ const getImageGroß = (image_name_G) => {
   }
 };
 
-//Test
+//Test Neu
 
 /*Alle bilder in "Pictures" hochladen und dann die Passenden namen unten Eintragen*/
 /*=>Siehe Beispiel Pistazie/Kaesekuchen!!*/
