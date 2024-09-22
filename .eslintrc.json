@@ -1,4 +1,4 @@
 {
   "parser": "@babel/eslint-parser",
-  "extends": ["next/core-web-vitals", "next/babel", "babel-eslint"],
+  "extends": ["next/core-web-vitals", "next/babel", "babel-eslint"]
 }
