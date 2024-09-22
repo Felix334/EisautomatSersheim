@@ -98,8 +98,7 @@ const Vanille = {
   available: true,
 };
 const Jogurt = { name: "Jogurt", img_name_: "Jogurt", image_name_G: "JogurtG",available: true };
-const Kaffe = {
-  name: "Kaffe",
+const Kaffe = {name: "Kaffe",
   img_name_: "Kaffe",
   image_name_G: "DefaultImage",
   available: true,
