@@ -2,9 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   extends: ['next/core-web-vitals', 'next/babel'],
-  images: {
-    
-  },
+  //images: {},
  
 };
 
