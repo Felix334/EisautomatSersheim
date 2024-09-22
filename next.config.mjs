@@ -5,11 +5,7 @@ const nextConfig = {
   images: {
     
   },
-  experimental: {
-    images: {
-      allowFsAccess: true,
-    },
-  },
+ 
 };
 
 
