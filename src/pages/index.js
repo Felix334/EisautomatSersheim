@@ -3,7 +3,7 @@ import styles from "../pageStyle";
 import { useState } from "react";
 import Head from "next/head";
 import Script from "next/script";
-import { setCookie, getCookie } from 'next-cookie';
+
 import { getMaxAge } from "next/dist/server/image-optimizer";
 //import Analytics from '@vercel/analytics';
 
@@ -57,39 +57,14 @@ function CookieConsentBanner() {
   const [consentGiven, setConsentGiven] = useState(false);
   const [showBanner, setShowBanner] = useState(true);
 
-  async function checkCooki(params) {
-    const cookie = getCookie('cookieConsent');
-    switch(cookie){
-      case '0':
-        setConsentGiven(false);
-        setShowBanner(false);
-      case '1':
-        setConsentGiven(true);
-        setShowBanner(true);
-      case '2':
-        setConsentGiven(false);
-        setShowBanner(true)
-    }
-    if(cookie == '0'){setShowBanner(false)}else{
-      setShowBanner(true)
-    }
-  }
-
+  
+  
   const handleAcceptCookies = () => {
-    setConsentGiven(true);
-    setCookie('cookieConsent', '1', {
-      maxAge: 30 * 24 * 60* 60,
-      path: '/'
-    });
+   
   };
 
   const handleDeclineCookies = () => {
-    setConsentGiven(false);
-    setShowBanner(false);
-    setCookie('cookieConsent', '2',{
-      maxAge: 30 * 24 * 60* 60,
-      path: '/'
-    })
+    
   };
 
   return (
