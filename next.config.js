@@ -5,4 +5,4 @@ const nextConfig = {
   //images: {},
 };
 
-export default nextConfig;
+module.exports = {nextConfig}
