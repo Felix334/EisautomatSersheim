@@ -231,4 +231,4 @@ const styles = {
     },
   };
   
-  export default {styles};
+  export {styles};
