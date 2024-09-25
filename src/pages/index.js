@@ -257,7 +257,6 @@ export default function Home() {
       <div style={styles.headerwrapper}>
         <div style={styles.header}>
           <h1 className="flex center-text text-align: center flex-col text-4xl md:text-4xl font-bold text-gray-900">
-            {" "}
             Eisautomat Sersheim
           </h1>
         </div>
