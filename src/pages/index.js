@@ -1,5 +1,5 @@
 import Image from "next/image";
-import {styles} from "./pageStyle";
+import styles from "./pageStyle";
 import { useState } from "react";
 
 const getImage = (image_name_) => {
