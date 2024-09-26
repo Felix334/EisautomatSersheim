@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 import Image from "next/image";
 //import styles from "./pageStyle";
 import { useState } from "react";
@@ -472,16 +473,11 @@ function EisGroß({ searchQuery }) {
 
 export default function Home() {
   const [searchQuerry, setSearchQuerry] = useState("");
-  const [showLogin, setShowLogin] = useState(false);
 
   const handleSearch = (e) => {
     setSearchQuerry(e.target.value);
     console.log("Toggle login clicked!");
   };
-  const handleToggleLogin = () => {
-    setShowLogin(!showLogin);
-  };
-
   return (
     // Name duch Bild ersetzen
     <main className="flex flex-col items-center justify-between p-4">
@@ -507,7 +503,6 @@ export default function Home() {
           <EisKlein searchQuery={searchQuerry} />
           <EisGroß searchQuery={searchQuerry} />
         </div>
-        {showLogin && <Login handleClose={handleToggleLogin} />}
       </div>
       <div className="fotter">
         <div style={styles.FooterBox}>
