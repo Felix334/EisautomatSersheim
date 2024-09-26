@@ -5,6 +5,25 @@ import { useState } from "react";
 import React from 'react';
 import PropTypes from 'prop-types';
 
+
+
+
+
+
+
+
+// Alles richtig
+
+
+
+
+
+
+
+
+
+
+
 const getImage = (image_name_) => {
   if (image_name_) {
     return require(`./pictures/${image_name_}.jpg`);
@@ -97,7 +116,7 @@ const SaltetKaramell = {
 const Vanille = {
   name: "Vanille",
   img_name_: "VanilleK",
-  image_name_G: "VanilleK",
+  image_name_G: "VanilleG",
   available: true,
 };
 const Jogurt = { name: "Jogurt", img_name_: "Jogurt", image_name_G: "JogurtG",available: true };
