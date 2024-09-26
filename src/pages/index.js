@@ -10,6 +10,7 @@ const getImage = (image_name_) => {
   }
 };
 
+
 const getImageGroß = (image_name_G) => {
   if (image_name_G) {
     return require(`./pictures/${image_name_G}.jpg`);
@@ -17,7 +18,6 @@ const getImageGroß = (image_name_G) => {
     return require(`./pictures/DefaultImage.jpg`);
   }
 };
-
 /*Alle bilder in "Pictures" hochladen und dann die Passenden namen unten Eintragen*/
 /*=>Siehe Beispiel Pistazie/Kaesekuchen!!*/
 
