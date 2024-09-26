@@ -2,6 +2,8 @@
 import Image from "next/image";
 //import styles from "./pageStyle";
 import { useState } from "react";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const getImage = (image_name_) => {
   if (image_name_) {
@@ -432,7 +434,7 @@ function EisKlein({ searchQuery }) {
     return <div style={styles.notFound}>Nicht gefunden</div>;
   }
   return filteredIceCreams.map((ice) => (
-    <div style={styles.icecreamcard}>
+    <div key={ice.name} style={styles.icecreamcard}>
       <Image
         src={getImage(ice.img_name_)}
         alt={ice.name}
@@ -451,11 +453,15 @@ function EisKlein({ searchQuery }) {
   ));
 }
 
+EisKlein.propTypes = {
+  searchQuery: PropTypes.string.isRequired,
+};
+
 function EisGroß({ searchQuery }) {
   return ice_big
     .filter((ice) => ice.name.toLowerCase().includes(searchQuery.toLowerCase()))
     .map((ice) => (
-      <div style={styles.icecreamcardBig}>
+      <div key={ice.name} style={styles.icecreamcardBig}>
         <Image
           src={getImageGroß(ice.image_name_G)}
           alt={ice.name}
@@ -470,6 +476,10 @@ function EisGroß({ searchQuery }) {
       </div>
     ));
 }
+
+EisGroß.propTypes = {
+  searchQuery: PropTypes.string.isRequired,
+};
 
 export default function Home() {
   const [searchQuerry, setSearchQuerry] = useState("");
