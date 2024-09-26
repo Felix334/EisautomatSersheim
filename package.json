@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "deploy": "vercel --lint=false",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
