@@ -5,24 +5,7 @@ import { useState } from "react";
 import React from 'react';
 import PropTypes from 'prop-types';
 
-
-
-
-
-
-
-
 // Alles richtig
-
-
-
-
-
-
-
-
-
-
 
 const getImage = (image_name_) => {
   if (image_name_) {
