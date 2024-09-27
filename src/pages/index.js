@@ -116,7 +116,7 @@ const SaltetKaramell = {
 const Vanille = {
   name: "Vanille",
   img_name_: "VanilleK",
-  image_name_G: "VanilleG",
+  image_name_G: "DefaultImage",
   available: true,
 };
 const Jogurt = { name: "Jogurt", img_name_: "Jogurt", image_name_G: "JogurtG",available: true };
