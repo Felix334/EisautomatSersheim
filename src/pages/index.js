@@ -510,6 +510,8 @@ export default function Home() {
   return (
     // Name duch Bild ersetzen
     <main className="flex flex-col items-center justify-between p-4">
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4153577229204032"
+     crossOrigin="anonymous"></script>
       <div style={styles.headerwrapper}>
         <div style={styles.header}>
           <h1 className="flex center-text text-align: center flex-col text-4xl md:text-4xl font-bold text-gray-900">
