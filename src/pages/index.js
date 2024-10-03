@@ -4,7 +4,7 @@ import Link from 'next/link';
 //import styles from "./pageStyle";
 import { useState } from "react";
 import React from 'react';
-import PropTypes from 'prop-types';
+
 
 // Alles richtig
 
