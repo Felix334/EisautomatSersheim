@@ -4,6 +4,7 @@ import Link from 'next/link';
 //import styles from "./pageStyle";
 import { useState } from "react";
 import React from 'react';
+import Head from 'next/head';
 
 
 // Alles richtig
@@ -490,10 +491,12 @@ export default function Home() {
   return (
     // Name duch Bild ersetzen
     <main className="flex flex-col items-center justify-between p-4">
+      <Head>
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4153577229204032"
      crossOrigin="anonymous"></script>
      <meta name="google-site-verification" content="R_M_5Rj4CBVcXxpEfx5jTQ3s_-y3iP6PC2ybwH5dnG4" />
      <link rel="icon" type="image/x-icon" href="./public/favicon.ico"></link>
+     </Head>
       <div style={styles.headerwrapper}>
         <div style={styles.header}>
           <h1 className="flex center-text text-align: center flex-col text-4xl md:text-4xl font-bold text-gray-900">
