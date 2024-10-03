@@ -1,0 +1,4 @@
+{
+  "extends": "next/core-web-vitals next/bable"
+} // NEVER EVER FUCKING TOUCH IT AGAIN
+// Every catastrophy since the beginning is the fault of the eslint file

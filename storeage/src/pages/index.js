@@ -4,25 +4,24 @@ import Image from "next/image";
 import { useState } from "react";
 import React from 'react';
 import PropTypes from 'prop-types';
+import { transformSync } from "next/dist/build/swc";
 
 // Alles richtig
 
 const getImage = (image_name_) => {
   if (image_name_) {
-    return require(`/src/pages/pictures/${image_name_}.jpg`);
+    return require(`./pictures/${image_name_}.jpg`);
   } else {
-    return require('./pictures/DefaultImage.jpg');
+    return require(`./pictures/DefaultImage.jpg`);
   }
 };
 
 
 const getImageGroß = (image_name_G) => {
   if (image_name_G) {
-    // eslint-disable-next-line no-undef
-    return require(`/src/pages/pictures/${image_name_G}.jpg`);
+    return require(`./pictures/${image_name_G}.jpg`);
   } else {
-    // eslint-disable-next-line no-undef
-    return require(`/src/pages/pictures/DefaultImage.jpg`);
+    return require(`./pictures/DefaultImage.jpg`);
   }
 };
 
@@ -410,7 +409,7 @@ let ice_big = [
 ];
 
 // 20:39 22.9.204
-/*function EisKlein({ searchQuery }) {
+function EisKlein({ searchQuery }) {
   const filteredIceCreams = ice_.filter((ice) =>
     ice.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
@@ -436,29 +435,7 @@ let ice_big = [
     </div>
   ));
 }
-*/
 
-function EisKlein({ searchQuery }) {
-  const filteredIceCreams = ice_.filter((ice) =>
-    ice.name.toLowerCase().includes(searchQuery.toLowerCase())
-  );
-  if (filteredIceCreams.length === 0) {
-    return <div style={styles.notFound}>Nicht gefunden</div>;
-  }
-  return filteredIceCreams.map((ice) => (
-    <div key={ice.name} style={styles.icecreamcard}>
-      <Image src={getImage(ice.img_name_)} alt={ice.name} width={300} height={200} />
-      <div style={styles.icecreaminfo}>
-        <h3 style={styles.icecreamname}>{ice.name}</h3>
-        <p style={styles.availability}>
-          Verfügbar: {ice.available ? "Ja" : "Nein"}
-        </p>
-        <p style={styles.size}>Größe: {ice.size}</p>
-        <p style={styles.priceStyle}>Preis: {price.priceSmall}€</p>
-      </div>
-    </div>
-  ));
-}
 EisKlein.propTypes = {
   searchQuery: PropTypes.string.isRequired,
 };
