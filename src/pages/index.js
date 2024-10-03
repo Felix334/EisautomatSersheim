@@ -459,9 +459,6 @@ function EisKlein({ searchQuery }) {
     </div>
   ));
 }
-EisKlein.propTypes = {
-  searchQuery: PropTypes.string.isRequired,
-};
 
 function EisGroß({ searchQuery }) {
   return ice_big
@@ -482,10 +479,6 @@ function EisGroß({ searchQuery }) {
       </div>
     ));
 }
-
-EisGroß.propTypes = {
-  searchQuery: PropTypes.string.isRequired,
-};
 
 export default function Home() {
   const [searchQuerry, setSearchQuerry] = useState("");
