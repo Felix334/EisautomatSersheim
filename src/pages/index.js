@@ -1,5 +1,6 @@
 /* eslint-disable react/react-in-jsx-scope */
 import Image from "next/image";
+import Link from 'next/link';
 //import styles from "./pageStyle";
 import { useState } from "react";
 import React from 'react';
@@ -9,8 +10,10 @@ import PropTypes from 'prop-types';
 
 const getImage = (image_name_) => {
   if (image_name_) {
+    // eslint-disable-next-line no-undef
     return require(`/src/pages/pictures/${image_name_}.jpg`);
   } else {
+    // eslint-disable-next-line no-undef
     return require('./pictures/DefaultImage.jpg');
   }
 };
@@ -450,10 +453,7 @@ function EisKlein({ searchQuery }) {
       <Image src={getImage(ice.img_name_)} alt={ice.name} width={300} height={200} />
       <div style={styles.icecreaminfo}>
         <h3 style={styles.icecreamname}>{ice.name}</h3>
-        <p style={styles.availability}>
-          Verfügbar: {ice.available ? "Ja" : "Nein"}
-        </p>
-        <p style={styles.size}>Größe: {ice.size}</p>
+        <p style={styles.size}>Größe: 150ml</p>
         <p style={styles.priceStyle}>Preis: {price.priceSmall}€</p>
       </div>
     </div>
@@ -500,7 +500,7 @@ export default function Home() {
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4153577229204032"
      crossOrigin="anonymous"></script>
      <meta name="google-site-verification" content="R_M_5Rj4CBVcXxpEfx5jTQ3s_-y3iP6PC2ybwH5dnG4" />
-     <link rel="icon" type="image/x-icon" href="public/favicon.ico"></link>
+     <link rel="icon" type="image/x-icon" href="./public/favicon.ico"></link>
       <div style={styles.headerwrapper}>
         <div style={styles.header}>
           <h1 className="flex center-text text-align: center flex-col text-4xl md:text-4xl font-bold text-gray-900">
@@ -525,6 +525,14 @@ export default function Home() {
           <EisGroß searchQuery={searchQuerry} />
         </div>
       </div>
+      <div className="Partner" style={styles.PartnerBox}>
+        <div className="SignName">Unsere Partner:</div>
+        <div className="PartnerName">
+          <Link href="https://www.fraeulein-schmid.de/#:~:text=Fr%C3%A4ulein%20Schmid%20bietet%20saisonal%20abgestimmte%20hand-%20und%20hausgemachte%20Produkte%20wie">
+            Fräulein Schmied
+          </Link>
+        </div>
+      </div>
       <div className="fotter">
         <div style={styles.FooterBox}>
           <div className="Adresse">
@@ -544,11 +552,6 @@ export default function Home() {
         </div>
       </div>
       </div>
-      <div className="flex flex-col items-center justify-between p-4">
-      <div style={styles.Background}>
-          <Image src={require('./pictures/Eisautomat.png')}/>
-    </div>
-    </div>
     </main>
   );
 }
