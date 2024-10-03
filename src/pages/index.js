@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useState } from "react";
 import React from 'react';
 import Head from 'next/head';
-
+import PropTypes from 'prop-types';
 
 // Alles richtig
 
@@ -461,6 +461,10 @@ function EisKlein({ searchQuery }) {
   ));
 }
 
+EisKlein.propTypes = {
+  searchQuery: PropTypes.string.isRequired,
+};
+
 function EisGroß({ searchQuery }) {
   return ice_big
     .filter((ice) => ice.name.toLowerCase().includes(searchQuery.toLowerCase()))
@@ -480,6 +484,10 @@ function EisGroß({ searchQuery }) {
       </div>
     ));
 }
+EisGroß.propTypes = {
+  searchQuery: PropTypes.string.isRequired,
+};
+
 
 export default function Home() {
   const [searchQuerry, setSearchQuerry] = useState("");
