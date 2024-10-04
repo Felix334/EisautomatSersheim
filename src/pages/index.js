@@ -6,6 +6,7 @@ import { useState } from "react";
 import React from 'react';
 import Head from 'next/head';
 import PropTypes from 'prop-types';
+import Script from 'next/script'
 
 // Alles richtig
 
@@ -500,8 +501,8 @@ export default function Home() {
     // Name duch Bild ersetzen
     <main className="flex flex-col items-center justify-between p-4">
       <Head>
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4153577229204032"
-     crossOrigin="anonymous"></script>
+      <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4153577229204032"
+     crossOrigin="anonymous"></Script>
      <meta name="google-site-verification" content="R_M_5Rj4CBVcXxpEfx5jTQ3s_-y3iP6PC2ybwH5dnG4" />
      <link rel="icon" type="image/x-icon" href="./public/favicon.ico"></link>
      </Head>
