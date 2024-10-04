@@ -1,12 +1,11 @@
-import "../styles/globals.css"; // Ensure the CSS file is being used somewhere
+import "../styles/globals.css";
 import React from 'react';
+import PropTypes from 'prop-types';
 
-function MyApp({ Component, pageProps }) {
-  return (
-    <div className="globals"> {/* Add a className to use the imported CSS */}
-      <Component {...pageProps} />
-    </div>
-  );
+export default function App({ Component, pageProps }) {
+  return <Component {...pageProps} />;
 }
-
-export default React.memo(MyApp);
+App.propTypes = {
+  Component: PropTypes.elementType.isRequired,
+  pageProps: PropTypes.object.isRequired,
+};
