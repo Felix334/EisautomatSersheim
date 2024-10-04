@@ -443,6 +443,7 @@ let ice_big = [
 }
 */
 
+
 function EisKlein({ searchQuery }) {
   const filteredIceCreams = ice_.filter((ice) =>
     ice.name.toLowerCase().includes(searchQuery.toLowerCase())
