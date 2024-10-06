@@ -366,6 +366,25 @@ const styles = {
       backgroundColor: "#3e8e41",
     },
   },
+  PartnerBox: {
+    color: "black",
+    height: "10%",
+    position: "relative",
+    marginBottom: "1%",
+    display: "grid",
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#f7f7f7",
+    padding: "20px",
+    borderTop: "1px solid #ddd",
+    width: "100%",
+    maxWidth: "100%",
+    boxSizing: "borderBox",
+  },
+  RefLink: {
+    display: "grid",
+    color: "blue"
+  }
 };
 
 
@@ -529,10 +548,11 @@ export default function Home() {
           <EisGroß searchQuery={searchQuerry} />
         </div>
       </div>
-      <div className="Partner" style={styles.PartnerBox}>
+      <div className="text-2xl font-bold text-gray-900" style={styles.PartnerBox}>
         <div className="SignName">Unsere Partner:</div>
         <div className="PartnerName">
-          <Link href="https://www.fraeulein-schmid.de/#:~:text=Fr%C3%A4ulein%20Schmid%20bietet%20saisonal%20abgestimmte%20hand-%20und%20hausgemachte%20Produkte%20wie">
+          <Link href="https://www.fraeulein-schmid.de/#:~:text=Fr%C3%A4ulein%20Schmid%20bietet%20saisonal%20abgestimmte%20hand-%20und%20hausgemachte%20Produkte%20wie"
+          className="RefLink" style={styles.RefLink}>
             Fräulein Schmied
           </Link>
         </div>

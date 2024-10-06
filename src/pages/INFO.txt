@@ -1,0 +1,8 @@
+#Auf vercel hochladen
+npx vercel deploy --prod
+
+#In dev umgebung laufen lassen
+npx vercel dev
+
+#Build command
+npx vercel build
