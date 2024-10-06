@@ -20,7 +20,6 @@ const getImage = (image_name_) => {
   }
 };
 
-
 const getImageGroß = (image_name_G) => {
   if (image_name_G) {
     // eslint-disable-next-line no-undef
@@ -30,7 +29,6 @@ const getImageGroß = (image_name_G) => {
     return require(`/src/pages/pictures/DefaultImage.jpg`);
   }
 };
-
 
 const price = { priceSmall: "3.20", priceBig: "4.80" };
 const Kaesekuchen = {
