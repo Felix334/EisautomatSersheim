@@ -12,4 +12,5 @@ export default function App({ Component, pageProps, Analytics }) {
 App.propTypes = {
   Component: PropTypes.elementType.isRequired,
   pageProps: PropTypes.object.isRequired,
+  Analytics: PropTypes.element.isRequired,
 };
