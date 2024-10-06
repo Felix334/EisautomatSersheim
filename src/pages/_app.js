@@ -3,8 +3,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 
-
-
 // This is the Problem
 
 export default function App({ Component, pageProps }) {

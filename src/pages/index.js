@@ -115,12 +115,12 @@ const MangoPassionsFruchtSorbet = {
 };
 const ErdbeerSorbet = {
   name: "Erdbeer-Sorbet",
-  img_name_: "DefaultImage",
+  img_name_: "ErdbeerSorbetK",
   img_name_G: "DefaultImage",
 };
 const ZitronenSorbet = {
   name: "Zitronen-Sorbet",
-  img_name_: "DefaultImage",
+  img_name_: "ZitronenSorbetK",
 };
 const JogurtHolunder = {
   name: "Jogurt-Holunder",
