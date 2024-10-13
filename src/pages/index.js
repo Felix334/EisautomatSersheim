@@ -435,7 +435,7 @@ function NavBar() {
       }}>
         Unser Partner
       </Link>
-      <Link href="./Routes/Kontakt" style={{
+      <Link href="./Kontakt" style={{
         ...styles.NavBarItem,
         flex: 2,
         minWidth: 0,
