@@ -420,7 +420,7 @@ function NavBar() {
         fontSize: `min(1.8rem, clamp(0.6rem, 1.4vw, 20px))`,
         padding: '1rem',
         border: "2px solid black",
-        backgroundColor: "#5DE2E7",
+        backgroundColor: "#98F5F9",
         borderRadius: '0.5rem',
         transition: 'background-color 0.3s ease',
         ':hover': {
@@ -443,7 +443,7 @@ function NavBar() {
         padding: '1rem',
         border: "2px solid black",
         borderRadius: '0.5rem',
-        backgroundColor: "#5DE2E7",
+        backgroundColor: "#98F5F9",
         transition: 'background-color 0.3s ease',
         ':hover': {
           backgroundColor: '#e0e0e0',
@@ -464,7 +464,7 @@ function NavBar() {
         padding: '1rem',
         border: "2px solid black",
         borderRadius: '0.5rem',
-        backgroundColor: "#5DE2E7",
+        backgroundColor: "#98F5F9",
         transition: 'background-color 0.3s ease',
         ':hover': {
           backgroundColor: '#e0e0e0',
