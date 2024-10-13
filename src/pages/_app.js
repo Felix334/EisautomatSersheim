@@ -1,16 +1,14 @@
 import "../styles/globals.css";
 import React from 'react';
 import PropTypes from 'prop-types';
-import Analytics from '@vercel/analytics';
 
-export default function App({ Component, pageProps, Analytics }) {
+export default function App({ Component, pageProps}) {
   return (
-      <Component {...pageProps} ><Analytics/></Component>
+      <Component {...pageProps} />
   );
 }
 
 App.propTypes = {
   Component: PropTypes.elementType.isRequired,
   pageProps: PropTypes.object.isRequired,
-  Analytics: PropTypes.element.isRequired,
 };
