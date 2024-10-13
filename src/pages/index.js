@@ -367,31 +367,6 @@ const styles = {
     display: "grid",
     color: "blue",
   },
-  NavBar: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    height: 'auto', // Change this to 'auto' to allow the nav bar to adjust its height
-    padding: '2% 0',
-    overflow: 'hidden', // Add this to prevent the nav bar from wrapping to a new line
-    whiteSpace: 'nowrap', // Add this to prevent the nav bar from wrapping to a new line
-  },
-  
-  NavBarItem: {
-    color: '#333',
-    textDecoration: 'none',
-    fontSize: '100%',
-    fontWeight: 'bold',
-    padding: '10px 15px',
-    border: "2px solid black",
-    borderRadius: '5px',
-    transition: 'background-color 0.3s ease',
-    ':hover': {
-      backgroundColor: '#e0e0e0',
-    },
-    flex: 1, // Remove this to allow the nav bar to adjust its width
-    marginRight: 20, // Keep this to add space between items
-  },
 };
 
 let ice_ = [Kaesekuchen, BuntesKleks, Cocoloco, BananaSplit, Haselnuss, Schokolade, Stratcciatella, Jogurt, JogurtHimbere, JogurtCassis, Pistazie, JogurtErdbeere, SaltetKaramell, Vanille, Kaffe, Kokustraum, SchokoKeks, MangoPassionsFruchtSorbet, ErdbeerSorbet, ZitronenSorbet, JogurtHolunder, SchokoVegan, HundeEis];
@@ -429,16 +404,76 @@ let ice_big = [Haselnuss, JogurtCassis, Vanille, Kaffe, SchokoKeks, ErdbeerSorbe
 
 function NavBar() {
   return (
-    <nav style={styles.NavBar}>
+    <nav style={{
+      display: 'flex',
+      justifyContent: 'center', // Center the navigation items
+      alignItems: 'center',
+      padding: '2% 0',
+      width: '100vw',
+      maxWidth: '600px'
+    }}>
       <Link href="https://www.fraeulein-schmid.de/#:~:text=Fr%C3%A4ulein%20Schmid%20bietet%20saisonal%20abgestimmte%20hand-%20und%20hausgemachte%20Produkte%20wie" 
-      style={styles.NavBarItem}>
+      style={{
+        ...styles.NavBarItem,
+        flex: 2,
+        minWidth: 0,
+        fontSize: `min(1.8rem, clamp(0.6rem, 1.4vw, 20px))`,
+        padding: '1rem',
+        border: "2px solid black",
+        backgroundColor: "#5DE2E7",
+        borderRadius: '0.5rem',
+        transition: 'background-color 0.3s ease',
+        ':hover': {
+          backgroundColor: '#e0e0e0',
+        },
+        margin: '0 1rem',
+        whiteSpace: 'nowrap',
+        overflow: 'hidden',
+        
+        // Consider removing maxWidth to avoid cutting off text
+        // maxWidth: '150px', 
+      }}>
         Unser Partner
       </Link>
-      <Link href="./Routes/Kontakt" style={styles.NavBarItem}>
+      <Link href="./Routes/Kontakt" style={{
+        ...styles.NavBarItem,
+        flex: 2,
+        minWidth: 0,
+        fontSize: `min(1.8rem, clamp(0.5rem, 1.4vw, 20px))`,
+        padding: '1rem',
+        border: "2px solid black",
+        borderRadius: '0.5rem',
+        backgroundColor: "#5DE2E7",
+        transition: 'background-color 0.3s ease',
+        ':hover': {
+          backgroundColor: '#e0e0e0',
+        },
+        margin: '0 1rem',
+        whiteSpace: 'nowrap',
+        overflow: 'hidden',
+        
+      }}>
         Kontakt
       </Link>
       <Link href={"https://www.google.com/maps/place/Vaihinger+Stra%C3%9Fe+82,+74372+Sersheim"} 
-      style={styles.NavBarItem}>
+      style={{
+        ...styles.NavBarItem,
+        flex: 2,
+        minWidth: 0,
+        fontSize: `min(1.8rem, clamp(0.5rem, 1.4vw, 20px))`,
+        padding: '1rem',
+        border: "2px solid black",
+        borderRadius: '0.5rem',
+        backgroundColor: "#5DE2E7",
+        transition: 'background-color 0.3s ease',
+        ':hover': {
+          backgroundColor: '#e0e0e0',
+        },
+        margin: '0 1rem',
+        whiteSpace: 'nowrap',
+        overflow: 'hidden',
+        maxFontSize: "1rem"
+      }}>
         Unser Standort
       </Link>
     </nav>
