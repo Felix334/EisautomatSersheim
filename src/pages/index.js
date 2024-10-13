@@ -1,12 +1,12 @@
 /* eslint-disable react/react-in-jsx-scope */
 import Image from "next/image";
-import Link from 'next/link';
+import Link from "next/link";
 //import styles from "./pageStyle";
 import { useState } from "react";
-import React from 'react';
-import Head from 'next/head';
-import PropTypes from 'prop-types';
-import Script from 'next/script'
+import React from "react";
+import Head from "next/head";
+import PropTypes from "prop-types";
+import Script from "next/script";
 
 // Alles richtig
 
@@ -16,7 +16,7 @@ const getImage = (image_name_) => {
     return require(`/src/pages/pictures/${image_name_}.jpg`);
   } else {
     // eslint-disable-next-line no-undef
-    return require('./pictures/DefaultImage.jpg');
+    return require("./pictures/DefaultImage.jpg");
   }
 };
 
@@ -32,6 +32,7 @@ const getImageGroß = (image_name_G) => {
 
 const price = { priceSmall: "3.20", priceBig: "4.80" };
 const Kaesekuchen = {
+  route_name : "KaeseKuchen",
   name: "Käsekuchen",
   img_name_: "Kaesekuchen",
 };
@@ -92,11 +93,8 @@ const Vanille = {
   img_name_: "VanilleK",
   image_name_G: "DefaultImage",
 };
-const Jogurt = { name: "Jogurt", img_name_: "Jogurt", image_name_G: "JogurtG",};
-const Kaffe = {name: "Kaffe",
-  img_name_: "Kaffe",
-  image_name_G: "DefaultImage",
-};
+const Jogurt = { name: "Jogurt", img_name_: "Jogurt", image_name_G: "JogurtG" };
+const Kaffe = { name: "Kaffe", img_name_: "Kaffe", image_name_G: "DefaultImage" };
 const Kokustraum = {
   name: "Kokustraum",
   img_name_: "DefaultImage",
@@ -109,7 +107,7 @@ const SchokoKeks = {
 const MangoPassionsFruchtSorbet = {
   name: "Mango-Passionsfrucht-Sorbet",
   img_name_: "MangoPassionsfrucht-Sorbet",
-  image_name_G:"Mango-PassionsFrucht-SorbetG",
+  image_name_G: "Mango-PassionsFrucht-SorbetG",
 };
 const ErdbeerSorbet = {
   name: "Erdbeer-Sorbet",
@@ -135,7 +133,6 @@ const HundeEis = {
 //Styles
 
 const styles = {
-  
   priceStyle: {
     color: "#666",
     fontSize: "18px",
@@ -143,12 +140,12 @@ const styles = {
   },
 
   icecreamcard: {
-    maxWidth: '78%',
-    backgroundColor: '#fff',
-    border: '1px solid #ddd',
-    borderRadius: '0.5rem',
-    padding: '1rem',
-    boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
+    maxWidth: "78%",
+    backgroundColor: "#fff",
+    border: "1px solid #ddd",
+    borderRadius: "0.5rem",
+    padding: "1rem",
+    boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
     alignItems: "center",
   },
 
@@ -163,19 +160,19 @@ const styles = {
     margin: "20px",
     marginBottom: "40px",
     backgroundColor: "#fef3c7",
-    gridAutoRows: '1fr'
+    gridAutoRows: "1fr",
   },
 
   icecreaminfo: {
     color: "#333",
-  fontSize: "20px",
-  fontWeight: "bold",
-  marginBottom: "15px",
-  textAlign: "center",
-  backgroundColor: "#f7f7f7", // added light gray background color
-  padding: "10px", // added padding for better spacing
-  borderRadius: "10px", // added rounded corners for a more modern look
-  boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)"
+    fontSize: "20px",
+    fontWeight: "bold",
+    marginBottom: "15px",
+    textAlign: "center",
+    backgroundColor: "#f7f7f7", // added light gray background color
+    padding: "10px", // added padding for better spacing
+    borderRadius: "10px", // added rounded corners for a more modern look
+    boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
   },
 
   icecreamname: {
@@ -217,7 +214,7 @@ const styles = {
     alignItems: "center",
     backgroundColor: "#f7f7f7",
     padding: "15px",
-    borderBottom: "1px solid #ddd",
+    border: "5px solid #ddd",
     width: "100vw", // take up full viewport width
     "@media (maxWidth: 68px)": {
       padding: "10px",
@@ -366,70 +363,15 @@ const styles = {
       backgroundColor: "#3e8e41",
     },
   },
-  PartnerBox: {
-    color: "black",
-    height: "10%",
-    position: "relative",
-    marginBottom: "1%",
-    display: "grid",
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#f7f7f7",
-    padding: "20px",
-    borderTop: "1px solid #ddd",
-    width: "100%",
-    maxWidth: "100%",
-    boxSizing: "borderBox",
-  },
   RefLink: {
     display: "grid",
-    color: "blue"
-  }
+    color: "blue",
+  },
 };
 
+let ice_ = [Kaesekuchen, BuntesKleks, Cocoloco, BananaSplit, Haselnuss, Schokolade, Stratcciatella, Jogurt, JogurtHimbere, JogurtCassis, Pistazie, JogurtErdbeere, SaltetKaramell, Vanille, Kaffe, Kokustraum, SchokoKeks, MangoPassionsFruchtSorbet, ErdbeerSorbet, ZitronenSorbet, JogurtHolunder, SchokoVegan, HundeEis];
 
-let ice_ = [
-  Kaesekuchen,
-  BuntesKleks,
-  Cocoloco,
-  BananaSplit,
-  Haselnuss,
-  Schokolade,
-  Stratcciatella,
-  Jogurt,
-  JogurtHimbere,
-  JogurtCassis,
-  Pistazie,
-  JogurtErdbeere,
-  SaltetKaramell,
-  Vanille,
-  Kaffe,
-  Kokustraum,
-  SchokoKeks,
-  MangoPassionsFruchtSorbet,
-  ErdbeerSorbet,
-  ZitronenSorbet,
-  JogurtHolunder,
-  SchokoVegan,
-  HundeEis,
-];
-
-let ice_big = [
-  Haselnuss,
-  JogurtCassis,
-  Vanille,
-  Kaffe,
-  SchokoKeks,
-  ErdbeerSorbet,
-  BananaSplit,
-  Pistazie,
-  Schokolade,
-  Stratcciatella,
-  BuntesKleks,
-  Jogurt,
-  MangoPassionsFruchtSorbet,
-  JogurtErdbeere,
-];
+let ice_big = [Haselnuss, JogurtCassis, Vanille, Kaffe, SchokoKeks, ErdbeerSorbet, BananaSplit, Pistazie, Schokolade, Stratcciatella, BuntesKleks, Jogurt, MangoPassionsFruchtSorbet, JogurtErdbeere];
 
 // 20:39 22.9.204
 /*function EisKlein({ searchQuery }) {
@@ -460,22 +402,99 @@ let ice_big = [
 }
 */
 
+function NavBar() {
+  return (
+    <nav style={{
+      display: 'flex',
+      justifyContent: 'center', // Center the navigation items
+      alignItems: 'center',
+      padding: '2% 0',
+      width: '100vw',
+      maxWidth: '600px'
+    }}>
+      <Link href="https://www.fraeulein-schmid.de/#:~:text=Fr%C3%A4ulein%20Schmid%20bietet%20saisonal%20abgestimmte%20hand-%20und%20hausgemachte%20Produkte%20wie" 
+      style={{
+        ...styles.NavBarItem,
+        flex: 2,
+        minWidth: 0,
+        fontSize: `min(1.8rem, clamp(0.6rem, 1.4vw, 20px))`,
+        padding: '1rem',
+        border: "2px solid black",
+        backgroundColor: "#F1DDC7",
+        borderRadius: '0.5rem',
+        transition: 'background-color 0.3s ease',
+        ':hover': {
+          backgroundColor: '#e0e0e0',
+        },
+        margin: '0 1rem',
+        whiteSpace: 'nowrap',
+        overflow: 'hidden',
+        
+        // Consider removing maxWidth to avoid cutting off text
+        // maxWidth: '150px', 
+      }}>
+        Unser Partner
+      </Link>
+      <Link href="./Kontakt" style={{
+        ...styles.NavBarItem,
+        flex: 2,
+        minWidth: 0,
+        fontSize: `min(1.8rem, clamp(0.5rem, 1.4vw, 20px))`,
+        padding: '1rem',
+        border: "2px solid black",
+        borderRadius: '0.5rem',
+        backgroundColor: "#F1DDC7",
+        transition: 'background-color 0.3s ease',
+        ':hover': {
+          backgroundColor: '#e0e0e0',
+        },
+        margin: '0 1rem',
+        whiteSpace: 'nowrap',
+        overflow: 'hidden',
+        
+      }}>
+        Kontakt
+      </Link>
+      <Link href={"https://www.google.com/maps/place/Vaihinger+Stra%C3%9Fe+82,+74372+Sersheim"} 
+      style={{
+        ...styles.NavBarItem,
+        flex: 2,
+        minWidth: 0,
+        fontSize: `min(1.8rem, clamp(0.5rem, 1.4vw, 20px))`,
+        padding: '1rem',
+        border: "2px solid black",
+        borderRadius: '0.5rem',
+        backgroundColor: "#F1DDC7",
+        transition: 'background-color 0.3s ease',
+        ':hover': {
+          backgroundColor: '#e0e0e0',
+        },
+        margin: '0 1rem',
+        whiteSpace: 'nowrap',
+        overflow: 'hidden',
+        maxFontSize: "1rem"
+      }}>
+        Unser Standort
+      </Link>
+    </nav>
+  );
+}
 
 function EisKlein({ searchQuery }) {
-  const filteredIceCreams = ice_.filter((ice) =>
-    ice.name.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  const filteredIceCreams = ice_.filter((ice) => ice.name.toLowerCase().includes(searchQuery.toLowerCase()));
   if (filteredIceCreams.length === 0) {
     return <div style={styles.notFound}>Nicht gefunden</div>;
   }
   return filteredIceCreams.map((ice) => (
     <div key={ice.name} style={styles.icecreamcard}>
+      
       <Image src={getImage(ice.img_name_)} alt={ice.name} width={300} height={200} />
       <div style={styles.icecreaminfo}>
         <h3 style={styles.icecreamname}>{ice.name}</h3>
         <p style={styles.size}>Größe: 150ml</p>
         <p style={styles.priceStyle}>Preis: {price.priceSmall}€</p>
       </div>
+      
     </div>
   ));
 }
@@ -484,17 +503,12 @@ EisKlein.propTypes = {
   searchQuery: PropTypes.string.isRequired,
 };
 
-function EisGroß({ searchQuery }) {
+function EisGroß({ searchQuery }) { // Link Testen
   return ice_big
     .filter((ice) => ice.name.toLowerCase().includes(searchQuery.toLowerCase()))
     .map((ice) => (
       <div key={ice.name} style={styles.icecreamcardBig}>
-        <Image
-          src={getImageGroß(ice.image_name_G)}
-          alt={ice.name}
-          width={300}
-          height={200}
-        />
+        <Image src={getImageGroß(ice.image_name_G)} alt={ice.name} width={300} height={200} />
         <div style={styles.icecreaminfo}>
           <h3 style={styles.icecreamname}>{ice.name}</h3>
           <p style={styles.size}>Größe: 480ml</p>
@@ -507,7 +521,6 @@ EisGroß.propTypes = {
   searchQuery: PropTypes.string.isRequired,
 };
 
-
 export default function Home() {
   const [searchQuerry, setSearchQuerry] = useState("");
 
@@ -519,62 +532,42 @@ export default function Home() {
     // Name duch Bild ersetzen
     <main className="flex flex-col items-center justify-between p-4">
       <Head>
-      <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4153577229204032"
-     crossOrigin="anonymous"></Script>
-     <meta name="google-site-verification" content="R_M_5Rj4CBVcXxpEfx5jTQ3s_-y3iP6PC2ybwH5dnG4" />
-     <link rel="icon" type="image/x-icon" href="./public/favicon.ico"></link>
-     </Head>
+        <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4153577229204032" crossOrigin="anonymous"></Script>
+        <meta name="google-site-verification" content="R_M_5Rj4CBVcXxpEfx5jTQ3s_-y3iP6PC2ybwH5dnG4" />
+        <link rel="icon" type="image/x-icon" href="./public/favicon.ico"></link>
+      </Head>
       <div style={styles.headerwrapper}>
         <div style={styles.header}>
-          <h1 className="flex center-text text-align: center flex-col text-4xl md:text-4xl font-bold text-gray-900">
-            Eisautomat Sersheim
-          </h1>
-        </div>
-      </div>
-      <div className="middleSection">
-      <div style={styles.searchBar}>
-        <input
-          className="Search"
-          type="search"
-          style={styles.InputSearchStyle}
-          value={searchQuerry}
-          onChange={handleSearch}
-          placeholder="Suchen"
-        ></input>
-      </div>
-      <div style={styles.body}>
-        <div style={styles.icecreamgrid}>
-          <EisKlein searchQuery={searchQuerry} />
-          <EisGroß searchQuery={searchQuerry} />
-        </div>
-      </div>
-      <div className="text-2xl font-bold text-gray-900" style={styles.PartnerBox}>
-        <div className="SignName">Unsere Partner:</div>
-        <div className="PartnerName">
-          <Link href="https://www.fraeulein-schmid.de/#:~:text=Fr%C3%A4ulein%20Schmid%20bietet%20saisonal%20abgestimmte%20hand-%20und%20hausgemachte%20Produkte%20wie"
-          className="RefLink" style={styles.RefLink}>
-            Fräulein Schmied
-          </Link>
-        </div>
-      </div>
-      <div className="fotter">
-        <div style={styles.FooterBox}>
-          <div className="Adresse">
-            <h4 className="text-2xl font-bold text-gray-900">Adresse:</h4>
-            <h2>Vaihinger Straße 82</h2>
-            <h2>74372 Sersheim</h2>
-            <div className="GoogleMapsWrapper">
-              <a
-                className="Link"
-                href="https://www.google.com/maps/place/Vaihinger+Stra%C3%9Fe+82,+74372+Sersheim">
-                <h2 style={styles.AdresseLink}>
-                  Adresse in Google Maps öffnen
-                </h2>
-              </a>
-            </div>
+          <h1 className="flex center-text text-align: center flex-col text-4xl md:text-4xl font-bold text-gray-900">Eisautomat Sersheim</h1>
+          <div className="NavBar">
+            <NavBar />
           </div>
         </div>
       </div>
+      <div className="middleSection">
+        <div style={styles.searchBar}>
+          <input className="Search" type="search" style={styles.InputSearchStyle} value={searchQuerry} onChange={handleSearch} placeholder="Suchen"></input>
+        </div>
+        <div style={styles.body}>
+          <div style={styles.icecreamgrid}>
+            <EisKlein searchQuery={searchQuerry} />
+            <EisGroß searchQuery={searchQuerry} />
+          </div>
+        </div>
+        <div className="fotter">
+          <div style={styles.FooterBox}>
+            <div className="Adresse">
+              <h4 className="text-2xl font-bold text-gray-900">Adresse:</h4>
+              <h2>Vaihinger Straße 82</h2>
+              <h2>74372 Sersheim</h2>
+              <div className="GoogleMapsWrapper">
+                <a className="Link" href="https://www.google.com/maps/place/Vaihinger+Stra%C3%9Fe+82,+74372+Sersheim">
+                  <h2 style={styles.AdresseLink}>Adresse in Google Maps öffnen</h2>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
   );
