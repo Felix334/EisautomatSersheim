@@ -561,8 +561,8 @@ export default function Home() {
         <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4153577229204032" crossOrigin="anonymous"></Script>
         <meta name="google-site-verification" content="R_M_5Rj4CBVcXxpEfx5jTQ3s_-y3iP6PC2ybwH5dnG4" />
         <link rel="icon" type="image/x-icon" href="./public/favicon.ico"></link>
-        <Analytics />
       </Head>
+      <Analytics />
       <div style={styles.headerwrapper}>
         <div style={styles.header}>
           <h1 className="flex center-text text-align: center flex-col text-4xl md:text-4xl font-bold text-gray-900">Eisautomat Sersheim</h1>
