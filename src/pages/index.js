@@ -8,6 +8,7 @@ import Head from "next/head";
 import PropTypes from "prop-types";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/react"
+
 //import styles from "./styles"
 
 // Alles richtig
@@ -546,6 +547,7 @@ function EisGroß({ searchQuery }) {
 EisGroß.propTypes = {
   searchQuery: PropTypes.string.isRequired,
 };
+
 
 export default function Home() {
   const [searchQuerry, setSearchQuerry] = useState("");
