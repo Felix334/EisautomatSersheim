@@ -39,6 +39,10 @@ const Kaesekuchen = {
   name: "Käsekuchen",
   img_name_: "Kaesekuchen",
 };
+const Mandarine = {
+  name: "Mandarine",
+  img_name_: "DefaultImage",
+}
 const BuntesKleks = {
   name: "Buntes-Klecks",
   img_name_: "BuntesKlecksK",
@@ -382,7 +386,7 @@ const styles = {
   },
 };
 
-let ice_ = [Kaesekuchen, BuntesKleks, Cocoloco, BananaSplit, Haselnuss, Schokolade, Stratcciatella, Jogurt, JogurtHimbere, JogurtCassis, Pistazie, JogurtErdbeere, SaltetKaramell, Vanille, Kaffe, Kokustraum, SchokoKeks, MangoPassionsFruchtSorbet, ErdbeerSorbet, ZitronenSorbet, JogurtHolunder, SchokoVegan, HundeEis];
+let ice_ = [Kaesekuchen, BuntesKleks, Cocoloco, BananaSplit, Mandarine,Haselnuss, Schokolade, Stratcciatella, Jogurt, JogurtHimbere, JogurtCassis, Pistazie, JogurtErdbeere, SaltetKaramell, Vanille, Kaffe, Kokustraum, SchokoKeks, MangoPassionsFruchtSorbet, ErdbeerSorbet, ZitronenSorbet, JogurtHolunder, SchokoVegan, HundeEis];
 
 let ice_big = [Haselnuss, JogurtCassis, Vanille, Kaffe, SchokoKeks, ErdbeerSorbet, BananaSplit, Pistazie, Schokolade, Stratcciatella, BuntesKleks, Jogurt, MangoPassionsFruchtSorbet, JogurtErdbeere];
 
