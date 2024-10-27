@@ -164,7 +164,6 @@ const styles = {
     borderRadius: "10px",
     boxShadow: "0 0 10px rgba(0, 0, 0.5, 0.5)",
     margin: "20px",
-    //marginBottom: "40px",
     backgroundColor: "#fef3c7",
     gridAutoRows: "1fr",
   },
